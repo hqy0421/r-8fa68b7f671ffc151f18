@@ -3,6 +3,7 @@ from agate.aggregations import *
 from agate.columns import Column
 from agate.computations import *
 from agate.config import get_option, set_option, set_options
+from agate.csv_importer import CSVImporter
 from agate.data_types import *
 from agate.exceptions import *
 # import agate.fixed as fixed

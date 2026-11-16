@@ -1,6 +1,7 @@
 1.14.3 - Unreleased
 -------------------
 
+- feat: Add :class:`.CSVImporter`, a resumable, batched and cleansing CSV importer. Records are cast with the declared column types: good records are collected into the result set, bad records are isolated in a quarantine with their original fields and the failure reason, and the read progress, results and quarantine are committed to a journal after each batch. After a close or an abnormal exit, the import resumes after the last committed record, numbering records by CSV record so quoted newlines are handled. Quarantined records can be fixed and replayed without changing the read progress. Results and quarantine are returned as native :class:`.Table` instances.
 - feat: :class:`.Median`, :class:`.Percentiles`, :class:`.Quartiles`, :class:`.Quintiles`, :class:`.Deciles` and :class:`.IQR` can be applied to :class:`.TimeDelta` columns, like :class:`.Sum` and :class:`.Mean`.
 - fix: :meth:`.Table.distinct` now deduplicates rows when ``key`` is a sequence of column names.
 - fix: :class:`.Rank` ranks null values last when ``reverse=True``.

@@ -26,6 +26,14 @@ class CastError(Exception):  # pragma: no cover
     pass
 
 
+class ImportStateMismatchError(Exception):  # pragma: no cover
+    """
+    A saved :class:`.CSVImporter` state can not be reused because the import
+    source or configuration has changed since the state was created.
+    """
+    pass
+
+
 class FieldSizeLimitError(Exception):  # pragma: no cover
     """
     A field in a CSV file exceeds the maximum length.

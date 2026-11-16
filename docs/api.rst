@@ -7,6 +7,7 @@ API
 
     api/table
     api/tableset
+    api/csv_importer
     api/columns_and_rows
     api/data_types
     api/type_tester
